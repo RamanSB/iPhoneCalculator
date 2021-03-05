@@ -1,0 +1,19 @@
+.operand-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 30px;
+  background-color: #EE9533;
+}
+
+.operand-image {
+  width: 28px;
+  height: 28px;
+}
+
+
+.number-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 30px;
+  background-color: #313131;
+}

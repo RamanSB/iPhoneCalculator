@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import OperandButton from './Keypad.js';
+import {Operands} from './Keypad.js';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <CalculatorBase>
+      <img src="logo192.png"/>
+      <OperandButton operandType={Operands.DIVIDE}/>
+      <OperandButton operandType={Operands.MULTIPLY}/>
+      <OperandButton operandType={Operands.SUBTRACT}/>
+      <OperandButton operandType={Operands.ADD}/>
+      <OperandButton operandType={Operands.EQUAL}/>
+    </CalculatorBase>
+  )
+
 }
+
+
+const CalculatorBase = ({children}) => {
+  return (
+    <div className="calculator-base">
+      {children}
+    </div>
+  )
+}
+
 
 export default App;
