@@ -1,4 +1,4 @@
-# Atempting to Build
+# Attempting to Build (iOS Calculator App)
 
 ![iOS Calculator App Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/ios-calculator-mock-image.png?raw=true)
 
