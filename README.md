@@ -1,4 +1,4 @@
-!(https://github.com/RamanSB/iPhoneCalculator/blob/master/public/ios-calculator-mock-image.png?raw=true)
+![iOS Calculator App Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/ios-calculator-mock-image.png?raw=true)
 
 # Getting Started with Create React App
 
