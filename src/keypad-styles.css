@@ -1,13 +1,16 @@
 .operand-button {
   width: 64px;
   height: 64px;
-  border-radius: 30px;
   background-color: #EE9533;
+  border-radius: 30px;
+  border: 2px solid orange;
+  margin: 4px 4px;
 }
 
 .operand-image {
   width: 28px;
   height: 28px;
+
 }
 
 
@@ -15,5 +18,20 @@
   width: 64px;
   height: 64px;
   border-radius: 30px;
+  border: 0.1em solid white;
   background-color: #313131;
+  margin: 6px 6px;
+  color: white;
+  font-size: 24px;
+}
+
+.number-button-zero {
+  width: 160px;
+  height: 64px;
+  border-radius: 30px;
+  border: 0.1em solid whitesmoke;
+  background-color: #313131;
+  margin: 8px 8px;
+  color: white;
+  font-size: 24px;
 }
