@@ -2,6 +2,9 @@
 
 ![iOS Calculator App Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/ios-calculator-mock-image.png?raw=true)
 
+Currently:
+![Current Progress Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/ios-calculator-1-image.png?raw=true)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
