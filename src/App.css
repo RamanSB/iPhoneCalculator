@@ -38,8 +38,10 @@
 } */
 
 .calculator-base {
-  width: 400px;
-  height: 743px;
+  width: 340px;
+  height: 600px;
   background-color: black;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
 }

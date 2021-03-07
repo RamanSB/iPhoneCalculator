@@ -33,7 +33,45 @@ const NumberButton = ({children}) => {
   )
 }
 
+/*
+  cancel, plus-minus, percentage
+*/
+const SpecialButton = ({specialType, children}) => {
+  console.log(`[SpecialButton] Children: ${specialType}`);
+  return (
+    <button className="special-button" onClick={()=>{console.log(`[SpecialButton] clicked`);}}>
+      {children ? children : <img className="special-image" src={`icons8-plus-minus-30px.png`}/>}
+    </button>
+  );
+}
+
+function Keypad(){
+  return (
+    <div id="keypad">
+      <SpecialButton specialType="cancel">C</SpecialButton>
+      <SpecialButton specialType="plus-minus"/>
+      <SpecialButton specialType="percentage">%</SpecialButton>
+      <OperandButton operandType="divide">%</OperandButton>
+      <NumberButton>7</NumberButton>
+      <NumberButton>8</NumberButton>
+      <NumberButton>9</NumberButton>
+      <OperandButton operandType={Operands.MULTIPLY}/>
+      <NumberButton>4</NumberButton>
+      <NumberButton>5</NumberButton>
+      <NumberButton>6</NumberButton>
+      <OperandButton operandType={Operands.SUBTRACT}/>
+      <NumberButton>1</NumberButton>
+      <NumberButton>2</NumberButton>
+      <NumberButton>3</NumberButton>
+      <OperandButton operandType={Operands.ADD}/>
+      <NumberButton>0</NumberButton>
+      <NumberButton>.</NumberButton>
+      <OperandButton operandType={Operands.EQUAL}/>
+    </div>
+  )
+}
+
 
 
 export default OperandButton;
-export {Operands, NumberButton, numbers};
+export {Operands, NumberButton, numbers, SpecialButton, Keypad};

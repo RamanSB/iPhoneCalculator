@@ -4,15 +4,30 @@
   background-color: #EE9533;
   border-radius: 30px;
   border: 2px solid orange;
-  margin: 4px 4px;
 }
 
 .operand-image {
   width: 28px;
   height: 28px;
-
 }
 
+.special-button {
+  width: 64px;
+  height: 64px;
+  border-radius: 30px;
+  border: 0.1em solid gray;
+  background-color: #a5a5a5;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.special-image {
+  width: 28px;
+  height: 28px;
+  margin-top: 6px;
+}
 
 .number-button {
   width: 64px;
@@ -20,18 +35,28 @@
   border-radius: 30px;
   border: 0.1em solid white;
   background-color: #313131;
-  margin: 6px 6px;
   color: white;
   font-size: 24px;
 }
 
 .number-button-zero {
-  width: 160px;
+  width: 150px;
   height: 64px;
   border-radius: 30px;
   border: 0.1em solid whitesmoke;
   background-color: #313131;
-  margin: 8px 8px;
   color: white;
   font-size: 24px;
+  grid-column-start: 0;
+  grid-column-end: span 2;
+}
+
+#keypad {
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px;
+  grid-template-rows: 84px 84px 84px 84px 84px;
+  column-gap: 4px;
+  row-gap: -4px;
+  padding: 8px 8px;
+  justify-content: center;
 }

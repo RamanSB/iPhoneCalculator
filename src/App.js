@@ -1,13 +1,14 @@
 import './App.css';
 import OperandButton from './Keypad.js';
-import {Operands, NumberButton} from './Keypad.js';
+import {Operands, NumberButton, SpecialButton, Keypad} from './Keypad.js';
 
 function App() {
 
   return (
     <CalculatorBase>
       {/*<img src="logo192.png"/>*/}
-      <OperandButton operandType={Operands.DIVIDE}/>
+
+    {/*  <OperandButton operandType={Operands.DIVIDE}/>
       <OperandButton operandType={Operands.MULTIPLY}/>
       <OperandButton operandType={Operands.SUBTRACT}/>
       <OperandButton operandType={Operands.ADD}/>
@@ -23,7 +24,10 @@ function App() {
       <NumberButton>8</NumberButton>
       <NumberButton>9</NumberButton>
       <NumberButton>.</NumberButton>
-
+      <SpecialButton specialType="plus-minus"/>
+      <SpecialButton specialType="percentage">%</SpecialButton>
+      <SpecialButton specialType="cancel">C</SpecialButton>*/ }
+      <Keypad/>
     </CalculatorBase>
   )
 
