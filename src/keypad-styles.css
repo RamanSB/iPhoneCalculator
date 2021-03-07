@@ -1,6 +1,7 @@
 .operand-button {
   width: 64px;
   height: 64px;
+  margin: auto;
   background-color: #EE9533;
   border-radius: 30px;
   border: 2px solid orange;
@@ -14,6 +15,7 @@
 .special-button {
   width: 64px;
   height: 64px;
+  margin: auto;
   border-radius: 30px;
   border: 0.1em solid gray;
   background-color: #a5a5a5;
@@ -33,6 +35,7 @@
   width: 64px;
   height: 64px;
   border-radius: 30px;
+  margin: auto;
   border: 0.1em solid white;
   background-color: #313131;
   color: white;
@@ -42,6 +45,7 @@
 .number-button-zero {
   width: 150px;
   height: 64px;
+  margin: auto;
   border-radius: 30px;
   border: 0.1em solid whitesmoke;
   background-color: #313131;
@@ -52,11 +56,12 @@
 }
 
 #keypad {
+  flex-grow: 3;
   display: grid;
   grid-template-columns: 80px 80px 80px 80px;
   grid-template-rows: 84px 84px 84px 84px 84px;
   column-gap: 4px;
-  row-gap: -4px;
   padding: 8px 8px;
-  justify-content: center;
+  align-items: end;
+  background-color: #black;
 }

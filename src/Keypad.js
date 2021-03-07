@@ -10,8 +10,15 @@ const Operands = {
   EQUAL: "equal"
 };
 
+const SpecialFunctions = {
+  PERCENTAGE: "percentage",
+  PLUSORMINUS: "plus-or-minus",
+  CANCEL: "cancel"
+};
+
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+Object.freeze(SpecialFunctions);
 Object.freeze(Operands);
 
 const OperandButton = ({operandType}) => {
@@ -23,6 +30,9 @@ const OperandButton = ({operandType}) => {
   );
 }
 
+/*
+  0,1,2,3,4,5,6,7,8,9,.
+*/
 const NumberButton = ({children}) => {
   console.log(`[NumberButtons] children: ${children}`);
   let className = (children == 0 ? 'number-button-zero' : 'number-button');
@@ -39,19 +49,19 @@ const NumberButton = ({children}) => {
 const SpecialButton = ({specialType, children}) => {
   console.log(`[SpecialButton] Children: ${specialType}`);
   return (
-    <button className="special-button" onClick={()=>{console.log(`[SpecialButton] clicked`);}}>
+    <button className="special-button" onClick={()=>{console.log(`[SpecialButton] clicked ${specialType}`);}}>
       {children ? children : <img className="special-image" src={`icons8-plus-minus-30px.png`}/>}
     </button>
   );
 }
 
-function Keypad(){
+function Keypad({value, dispatch}){
   return (
     <div id="keypad">
-      <SpecialButton specialType="cancel">C</SpecialButton>
-      <SpecialButton specialType="plus-minus"/>
-      <SpecialButton specialType="percentage">%</SpecialButton>
-      <OperandButton operandType="divide">%</OperandButton>
+      <SpecialButton specialType={SpecialFunctions.CANCEL}>C</SpecialButton>
+      <SpecialButton specialType={SpecialFunctions.PLUSORMINUS}/>
+      <SpecialButton specialType={SpecialFunctions.PERCENTAGE}>%</SpecialButton>
+      <OperandButton operandType={Operands.DIVIDE}/>
       <NumberButton>7</NumberButton>
       <NumberButton>8</NumberButton>
       <NumberButton>9</NumberButton>
