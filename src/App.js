@@ -4,6 +4,10 @@ import {evaluate} from 'mathjs';
 import OperandButton from './Keypad.js';
 import {Operands, Keypad, SpecialFunctions} from './Keypad.js';
 
+//ToDo: Use a stack for the calculator string literal we are evaluating
+//ToDo: Also use Context hook (useContext()) and use provider and consumer
+//o=instead of prop drilling the dispatcher and state (value)
+
 const reducer = (state, action) => {
   console.log(`Action Object: ${JSON.stringify(action)}`);
   const {type, value} = action;
@@ -39,7 +43,7 @@ const reducer = (state, action) => {
   } else if(type==='special'){
       switch(value){
         case SpecialFunctions.PERCENTAGE:
-          return `${evaluate(`${state}/100`)}`;
+          return `${evaluate(`${evaluate(state)}`/100)}`;
         case SpecialFunctions.CANCEL:
           return '0';
         case SpecialFunctions.PLUSORMINUS:
