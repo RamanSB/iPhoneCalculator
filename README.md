@@ -11,6 +11,10 @@
 3) Perhaps use a Context object, via the useContext hook (maybe fork the repo or create a new branch & try this)
 
 
+#### Licences:
+
+Icons - https://icons8.com/
+
 ## Available Scripts
 
 In the project directory, you can run:
