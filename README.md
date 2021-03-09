@@ -5,7 +5,7 @@
 ### Current progress:
 ![Current Progress Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/iphonecalculator-image-progress-2.png?raw=true)
 
-###To Do:
+### To Do:
 1) Use a Stack to keep track of what mathematical expressions are legal to evaluate and those which do not (do this within the reducer) - flag legal and illegal mathematical expressions.
 2) Ensure that AC turns to C once a valid expression is initially detected.
 3) Perhaps use a Context object, via the useContext hook (maybe fork the repo or create a new branch & try this)
