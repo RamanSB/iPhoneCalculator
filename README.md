@@ -2,8 +2,8 @@
 
 ![iOS Calculator App Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/ios-calculator-mock-image.png?raw=true)
 
-### Current progress:
-![Current Progress Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/iphonecalculator-image-progress-2.png?raw=true)
+### Demo:
+![Demonstrating App](https://github.com/RamanSB/iPhoneCalculator/blob/master/demo/iphone-calculator-react-demo.gif)
 
 ### To Do:
 1) Use a Stack to keep track of what mathematical expressions are legal to evaluate and those which do not (do this within the reducer) - flag legal and illegal mathematical expressions.
