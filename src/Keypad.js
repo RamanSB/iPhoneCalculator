@@ -24,8 +24,6 @@ Object.freeze(Operands);
 const OperandButton = ({operandType, displayValue, dispatch}) => {
   return (
     <button className="operand-button" onClick={()=>{
-      console.log(`[OperandButton] clicked ${operandType}`);
-      console.log(`Calling dispatch function with action: ${operandType}`);
       let actionObject = {
         type: 'operator',
         value: operandType
@@ -44,8 +42,6 @@ const NumberButton = ({children, displayValue, dispatch}) => {
   let className = (children == 0 ? 'number-button-zero' : 'number-button');
   return (
     <button className={className} onClick={()=>{
-      console.log(`[NumberButton] clicked ${children}`);
-      console.log(`About to call dispatch function ${dispatch} with action: ${children}`);
       let actionObject = {
         type: 'number',
         value: `${children}`

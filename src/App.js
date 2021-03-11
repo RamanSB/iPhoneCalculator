@@ -8,11 +8,7 @@ import {Operands, Keypad, SpecialFunctions} from './Keypad.js';
 //o=instead of prop drilling the dispatcher and state (value)
 
 const reducer = (state, action) => {
-  console.log(`[reducer] Current state: ${state}`);
-  console.log(`[reducer] Action Object: ${JSON.stringify(action)}`);
   const {type, value} = action;
-  console.log(`Type: ${type}, Value: ${value}`);
-
   let operatorSymbol = null;
   if(type==='operator'){
     switch(value){
@@ -54,12 +50,10 @@ const reducer = (state, action) => {
     }
   }
   calculatorExpression = modifyCalculatorExpressionToBeValid(calculatorExpression);
-  console.log(`[reducer] calculator expression: ${calculatorExpression}`);
   return calculatorExpression;
 }
 
 function modifyCalculatorExpressionToBeValid(calculatorExpression){
-  console.log(`[isCalculatorExpressionValid] calculatorExpression: ${calculatorExpression}`);
   let expressionStack = calculatorExpression.split('');
   let previousLiteral = null;
   let nextLiteral = null;
@@ -88,7 +82,6 @@ function modifyCalculatorExpressionToBeValid(calculatorExpression){
     }
   }
 
-  console.log(`Expression Stack: ${expressionStack}`);
   if(expressionStack[0] === '*' || expressionStack[0] === '+' || expressionStack[0] === '/'){
     expressionStack = ["0"];
   }
