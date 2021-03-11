@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import {evaluate} from 'mathjs';
-import OperandButton from './Keypad.js';
 import {Operands, Keypad, SpecialFunctions} from './Keypad.js';
 
 //ToDo: Use a stack for the calculator string literal we are evaluating
@@ -9,9 +8,11 @@ import {Operands, Keypad, SpecialFunctions} from './Keypad.js';
 //o=instead of prop drilling the dispatcher and state (value)
 
 const reducer = (state, action) => {
-  console.log(`Action Object: ${JSON.stringify(action)}`);
+  console.log(`[reducer] Current state: ${state}`);
+  console.log(`[reducer] Action Object: ${JSON.stringify(action)}`);
   const {type, value} = action;
   console.log(`Type: ${type}, Value: ${value}`);
+
   let operatorSymbol = null;
   if(type==='operator'){
     switch(value){
@@ -34,12 +35,14 @@ const reducer = (state, action) => {
     }
   }
 
+  let calculatorExpression = null;
+
   if(state==='0' && type==='number' || (state==='0' && type==='operator' && value===Operands.SUBTRACT)){
     return type==='operator' ? operatorSymbol : value;
   } else if(type==='number'){
-      return state.concat(value);
+      calculatorExpression = state.concat(value);
   } else if(type==='operator'){
-      return state.concat(operatorSymbol);
+      calculatorExpression = state.concat(operatorSymbol);
   } else if(type==='special'){
       switch(value){
         case SpecialFunctions.PERCENTAGE:
@@ -50,6 +53,46 @@ const reducer = (state, action) => {
           return '-';
     }
   }
+  calculatorExpression = modifyCalculatorExpressionToBeValid(calculatorExpression);
+  console.log(`[reducer] calculator expression: ${calculatorExpression}`);
+  return calculatorExpression;
+}
+
+function modifyCalculatorExpressionToBeValid(calculatorExpression){
+  console.log(`[isCalculatorExpressionValid] calculatorExpression: ${calculatorExpression}`);
+  let expressionStack = calculatorExpression.split('');
+  let previousLiteral = null;
+  let nextLiteral = null;
+
+  if(expressionStack.length >=2){
+    previousLiteral = expressionStack[expressionStack.length-2];
+    nextLiteral = expressionStack[expressionStack.length-1];
+
+    if((previousLiteral==='-' || previousLiteral==='+') && (nextLiteral==='/' || nextLiteral==='*')){
+      expressionStack[expressionStack.length-2] = expressionStack.pop();
+    }
+    if(previousLiteral==='/' && nextLiteral==='*'){
+      expressionStack[expressionStack.length-2] = expressionStack.pop();
+    }
+    if(previousLiteral==='*' && nextLiteral==='/'){
+      expressionStack[expressionStack.length-2] = expressionStack.pop();
+    }
+    if(previousLiteral==='/' && nextLiteral==='/'){
+      expressionStack[expressionStack.length-2] = expressionStack.pop();
+    }
+    if(previousLiteral==='*' && nextLiteral==='*'){
+      expressionStack[expressionStack.length-2] = expressionStack.pop();
+    }
+    if(previousLiteral==='+' && nextLiteral==='+'){
+      expressionStack[expressionStack.length-2] = expressionStack.pop();
+    }
+  }
+
+  console.log(`Expression Stack: ${expressionStack}`);
+  if(expressionStack[0] === '*' || expressionStack[0] === '+' || expressionStack[0] === '/'){
+    expressionStack = ["0"];
+  }
+  return expressionStack.join("");
 }
 
 
