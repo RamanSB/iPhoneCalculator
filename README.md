@@ -1,12 +1,13 @@
 # Attempting to Build (iOS Calculator App)
 
-![iOS Calculator App Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/ios-calculator-mock-image.png?raw=true)
-
 ### Demo:
 ![Demonstrating App](https://github.com/RamanSB/iPhoneCalculator/blob/master/demo/iphone-calculator-demo-resized.gif)
 
+### Target;
+![iOS Calculator App Image](https://github.com/RamanSB/iPhoneCalculator/blob/master/public/ios-calculator-mock-image.png?raw=true)
+
 ### To Do:
-1) Use a Stack to keep track of what mathematical expressions are legal to evaluate and those which do not (do this within the reducer) - flag legal and illegal mathematical expressions.
+1) Use a Stack to keep track of what mathematical expressions are legal to evaluate and those which do not (do this within the reducer) - flag legal and illegal mathematical expressions. (DONE)
 2) Ensure that AC turns to C once a valid expression is initially detected.
 3) Perhaps use a Context object, via the useContext hook (maybe fork the repo or create a new branch & try this)
 
